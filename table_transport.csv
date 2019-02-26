@@ -1,0 +1,6 @@
+id_trans;nama_trans;jenis_trans;kelas;kuota_trans;rute;no_kursi;harga
+KR001;Kutojaya;Kereta;Ekonomi;300;Jakarta - Malang;A1;65000
+KR002;Argowilis;Kereta;Eksekutif;300;Jakarta - Bandung;B3;30000
+KR003;Batik Air;Pesawat;Ekonomi;200;Bandung - bali;C10;100000
+KR004;Lion Air;Pesawat;Ekonomi;180;Jakarta - Padang;D14;120000
+KR005;Garuda;Pesawat;Bisnis;250;Bandung - Pontianak;F17;150000

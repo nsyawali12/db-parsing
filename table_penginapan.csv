@@ -1,0 +1,6 @@
+id_penginapan;nama_penginapan;no_kamar;jenis_penginapan;type_penginapan;kapasistas;Lokasi
+HT001;Luxure Hotel;10;familyroom;family;6;Jakarta
+HT002;Ibis Hotel;13;singleroom;single;2;Bandung
+HT003;Aston Hotel;15;Kingroom;king;2;Bandung
+HT004;Clove Hotel;17;Doubleroom;double;4;Solo
+HT005;Black Hotel;20;singleroom;single;2;Jakarta
