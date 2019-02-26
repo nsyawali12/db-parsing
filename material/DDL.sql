@@ -85,9 +85,9 @@ CREATE TABLE customer_service
 Create table pembayaran
  (
 	kode_bayar varchar2(20) PRIMARY KEY NOT NULL,
-    	kode_tiket VARCHAR2(15),
-    	kode_pesan VARCHAR(20),
-    	id_penginapan VARCHAR2(10),
+    kode_tiket VARCHAR2(15),
+    kode_pesan VARCHAR(20),
+    id_penginapan VARCHAR2(10),
 	norek_perusahaan varchar2(20),
 	norek varchar2(20),
 	metode_pembayaran varchar2(20),
