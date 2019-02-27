@@ -23,7 +23,7 @@ CREATE TABLE transport
     id_transportasi VARCHAR2(10) PRIMARY KEY NOT NULL,
     nama_trnsprt VARCHAR2 (20),
     jenis_transport VARCHAR2 (20),
-    kelas VARCHAR2 (10) ,
+    kelas VARCHAR2 (10),
     kapasitas_trnsprt NUMBER,
     rute VARCHAR2 (30),
     no_kursi VARCHAR2 (10),
