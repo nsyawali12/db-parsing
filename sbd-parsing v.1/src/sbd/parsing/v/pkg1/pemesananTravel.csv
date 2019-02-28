@@ -1,6 +1,0 @@
-﻿"Akun;username;nik,password;nama_lengkap;email#Transportasi;id_trans;nama_trans;jenis_trans;kelas;kuota_trans;rute;no_kursi;harga#Memesan;id_trans;username;tujuan;kode_tiket;keberatan#KR001;dean;Malang;KDKR001;Jakarta"
-dean;312980900;deanherb1;hearb dean;herbdean.12@gmail.com#KR001;Kutojaya;Kereta;Ekonomi;300;Jakarta - Malang;A1;65000#KR002;lunox;Bandung;KDKR002;Jakarta
-lunox;312123800;jdhan123;adnan janujaz;adhanjanujaz@gmail.com#KR002;Argowilis;Kereta;Eksekutif;300;Jakarta - Bandung;B3;30000#KR002;lunox;Bandung;KDKR002;Jakarta
-lesley;312981399;chrisB;chris brown;chrisbro@gmail.com#KR003;Batik Air;Pesawat;Ekonomi;200;Bandung - bali;C10;100000#KR003;lesley;Bali;KDKP001;Bandung
-bruno;312982131;lunox1;bruno mars;lunoxML@gmail.com#KR004;Lion Air;Pesawat;Ekonomi;180;Jakarta - Padang;D14;120000#KR004;bruno;Padang;KDKP002;Jakarta
-harley;312392019;alucard12;harley david;AucardML@gmail.com#KR005;Garuda;Pesawat;Bisnis;250;Bandung - Pontianak;F17;150000#KR005;harley;Pontianak;KDKP003;Bandung
