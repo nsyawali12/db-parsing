@@ -111,13 +111,154 @@ public class SbdParsingV1 {
                       int selectData1 = inFrom;
                       String[] listSelect1 = null;
                       List<String> ArrayT = new ArrayList<String>(); //ArrayT = Temporary Array
+                      for(int i = 0; i < selectData1 - 1; i++){
+                        ArrayT.add(insert_input[i+1]);
+                      }
+                      listSelect1 = new String[ArrayT.size()];
+                      ArrayT.toArray(listSelect1);
+
+                      boolean sTable1 = false;
+                      boolean sTable2 = false;
+                      //sTable = status Tabel
+
+                      int i = 0;
+                      while (i < csvResult.length && !sTable1) {
+                        if(csvResult[i].contains(insert_input[inFrom+1])){
+                          sTable1 = true;
+                        }
+                        i++;
+                      }
+                      i = 0;
+                      while (i < csvResult.length && !sTable2){
+                        if(csvResult[i].contains(insert_input[inJoin+1])){
+                          sTable2 = true;
+                        }
+                        i++;
+                      }
+
+                      if(!sTable1 || !sTable2){
+                        System.out.println("Tabel yang anda masukkan tidak terdaftar");
+                      }
+
+                      boolean statData = false;
+                      i = 0;
+                      int count = 0;
+                        //mengeluarkan hasil CSV dan List data yang dipilih
+
+                      while(i < listSelect1.length-1){
+                        int j = 0;
+                        boolean temp2 = false;
+                        while(j < csvResult.length && !temp2){
+                          if(csvResult[j].contains(listSelect1[i])){
+                            if(csvResult[j].contains(insert_input[inFrom+1]) || csvResult[j].contains(insert_input[inJoin+1])){
+                                count++;
+                            }
+                          }
+                          j++;
+                        }
+                        i++;
+                      }
+
+                      //print count;
+                      //print status date sTable1
+                      //print status dari sTable2
+
+                      if(count == listSelect1.length && sTable1 && sTable2){
+                        String res1 = ""; //result 1
+                        String res2 = ""; //result 2
+                        for(int z = 0; z < listSelect1.length; z++){
+                          for(int y = 0; y < csvResult.length; y++){
+                            if(csvResult[y].contains(insert_input[inFrom+1]) && csvResult[y].contains(listSelect1[z])){
+                              res1 = res1 + listSelect1[z] + ", ";
+                            }
+                            if(csvResult[y].contains(insert_input[inJoin+1]) && csvResult[y].contains(listSelect1[z])){
+                              res2 = res2 + listSelect1[z] + ", ";
+                            }
+                          }
+                        }
+
+                        //output hasil 1 dari res 1 dimana res1 menggunakan from
+                        //output hasil 2 dari res 2 dimana res2 menggunakan Join
+                        System.out.println("Hasilnya adalah");
+                        System.out.println("Tabel 1: " + insert_input[inFrom+1]);
+                        System.out.println("Kolom: "+ res1);
+                        System.out.println("Tabel 2: " + insert_input[inJoin+1]);
+                        System.out.println("Kolom: "+ res2);
+                      }
+                    } else {
+                      System.out.println("Perbedaan pada kolom, Query Error!");
                     }
 
+                  } else {
+                    System.out.println("Querry Error karena 'On' tidak dapat ditemukan");
                   }
+                } else {
+                    String fromName = insert_input[inFrom+1];
+                    int selectData1 = inFrom;
+                    String[] listSelect1 = null;
+                    List<String> ArrayT = new ArrayList<String>();
+                    for(int i=0; i < selectData1 - 1; i++){
+                      ArrayT.add(insert_input[i+1]);
+                    }
+                    listSelect1 = new String[ArrayT.size()];
+                    ArrayT.toArray(listSelect1);
+
+                    boolean sSTable = false; //status Semua sTable
+                    int i = 0;
+                    while(i < csvResult.length && !sSTable){
+                      if(csvResult[i].contains(insert_input[inFrom+1])){
+                        sSTable = true;
+                      }
+                      i++;
+                    }
+                    if (!sSTable){
+                        System.out.println("Tabel tidak terdaftar");
+                    }
+
+                    boolean sData = false;
+                    i=0;
+                    int count = 0;
+
+                    //nantinya akan mengoutputkan hasil panjang data csvResult
+
+                    while(i<listSelect1.length && !sData){
+                      int j = 0;
+                      boolean temp2 = false;
+                      while(j < csvResult.length && !temp2){
+                        if(csvResult[j].contains(listSelect1[i])){
+                          if(csvResult[j].contains(insert_input[inFrom+1])){
+                            count++;
+                          }
+                        }
+                        j++;
+                      }
+                      i++;
+                    }
+                    //output si count nya
+                    if(count == listSelect1.length && sSTable){
+                      String result = "";
+                      for(int z=0; z < count; z++){
+                        result = result + listSelect1[z] + ", ";
+                      }
+                      System.out.println("Tabel: "+ insert_input[inFrom+1]);
+                      System.out.println("Kolom: "+ result);
+                    } else {
+                      System.out.println("Query Error");
+                    }
                 }
+              } else {
+                System.out.println("Query Error, karena 'from' tidak dapat terdeteksi");
               }
+            } else {
+              System.out.println("Query Error karena anda memasukkan format Query yang salah!");
             }
+
+          } else {
+            System.out.println("Query Not Found");
           }
+
+        } else {
+          System.out.println("Query Error karena 'Select' tidak ditemukan ");
         }
 
     }
